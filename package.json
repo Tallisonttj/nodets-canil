@@ -14,7 +14,12 @@
   "author": "",
   "type": "commonjs",
   "main": "index.js",
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
+    "start": "node dist/server.js",
+    "postinstall": "tsc && copyfiles -u 1 src/**/*.mustache dist/",
     "start-dev": "nodemon -e ts,json,mustache src/server.ts"
   },
   "dependencies": {
@@ -25,6 +30,7 @@
   "devDependencies": {
     "@types/express": "^5.0.1",
     "@types/mustache-express": "^1.2.5",
-    "@types/node": "^22.14.1"
+    "@types/node": "^22.14.1",
+    "copyfiles": "^2.4.1"
   }
 }
