@@ -19,12 +19,14 @@ server.use(express.static(path.join(__dirname,'../public'))) // setamos nossa pa
 
 //OBS: DEVEMOS CRIAR UMA PASTA public fora da pasta src
 
+
+
 //ROTAS
 
   server.use(mainRouter) // adiciona a rota principal
 
   server.use((req, res) => {
-    res.send('Pagina não encontrada')
+    res.render('pages/404')
   })
 
 //
